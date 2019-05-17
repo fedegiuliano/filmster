@@ -9,6 +9,7 @@ window.table = Table('#movies', {
         { label: 'Descripción', field: 'description' },
         { label: 'Año', field: 'year' },
         { label: 'Pais', field: 'country' },
+        { label: 'Lenguaje', field: 'language' },
         {
             label: 'Guionistas',
             field: 'writers',
