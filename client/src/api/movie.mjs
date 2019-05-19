@@ -2,30 +2,31 @@ function getAll() {
     return fetch('/api/v1/movies')
         .then(result => result.json())
 }
-function createMovie(movie){
-	const año = movie.year.toString().slice(10, 15);
-	const data = JSON.stringify({ 
-		title: movie.title, 
-		description: movie.plot, 
-		year: año, 
-		country: movie.country, 
-		runtime: movie.runtime, 
-		language: movie.language, 
-		generes: movie.generes, 
-		writers: movie.writers, 
-		directors: movie.directors 
-	})
-
-	return fetch('/api/v1/movies', {
-        method: 'POST',
-        body:    data,
-        headers: { 'Content-Type': 'application/json' },
+function create(movie) {
+  const anio=movie.year.getFullYear()
+fetch('/api/v1/movies', {
+        method: 'post',
+        body:    JSON.stringify({title:movie.name,description:movie.plot,year:anio,runtime:movie.runtime,country:movie.country,language:movie.language,genres:movie.generes,writers:movie.writers,directors:movie.directors}),
+        headers: { 	'Accept': 'application/json',
+        			'Content-Type': 'application/json' },
     })
-	.then(res => res)
-    .then(json => console.log(json));
-}
-
-export default {
-    getAll,
-    createMovie
-}
+    .then(res => res.json())
+	    .then(json => console.log(json));
+	}
+	
+	function editar(movie) {
+	fetch('/api/v1/movies/'+movie.id, {
+	        method: 'put',
+	        body:    JSON.stringify({title:movie.name,description:movie.plot,year:movie.year,runtime:movie.runtime,country:movie.country,language:movie.language,genres:movie.generes,writers:movie.writers,directors:movie.directors}),
+	        headers: { 	'Accept': 'application/json',
+	        			'Content-Type': 'application/json' },
+	    })
+	}
+	
+	
+	export default {
+	    getAll,
+	    
+	    create,
+		editar
+	}
