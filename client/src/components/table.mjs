@@ -65,7 +65,6 @@ function onCheckClicked(table, e) {
 
         if (isSelected) {
             table.selectedRows = [...table.selectedRows, toggleRow]
-
             table.onSelectedRow(toggleRow)
         } else {
             table.selectedRows = table.selectedRows.filter(function (row) {
