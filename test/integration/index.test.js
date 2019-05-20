@@ -32,23 +32,25 @@ test('Se debería reflejar en la base de datos la pelicula agregada', async () =
         writers: 'nose',
         directors: 'nose'
     }
-	function create(movie) {fetch(URL, {
+	
+    await fetch(URL, {
         method: 'post',
-       body:    JSON.stringify({title:movie.name,description:movie.plot,year:anio,
-       	runtime:movie.runtime,country:movie.country,language:movie.language,
-       	genres:movie.generes,writers:movie.writers,directors:movie.directors})
+        body:    JSON.stringify({title:movie.name,description:movie.plot,year:anio,
+        runtime:movie.runtime,country:movie.country,language:movie.language,
+        genres:movie.generes,writers:movie.writers,directors:movie.directors
+        })
     })	
-	}
+	
 
-	const result= function getAll() {
-    return fetch('/api/v1/movies')
+	//const result = function getAll() 
+    const movies = await fetch('/api/v1/movies')
         .then(result => result.json())
-		}
+		
 
-  expect(movie.title).toBe(result.title);
+  expect(movies.length).toBe(1);
 
 }) 
-    expect(movies.length).toBe(0)
+
 
 test('Se deberÌa iniciar la aplicaciÛn sin pelÌculas', async () => {
     const URL = `${baseURL}/movies`;
