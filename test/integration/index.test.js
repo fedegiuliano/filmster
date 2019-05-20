@@ -47,11 +47,9 @@ test('Se debería reflejar en la base de datos la pelicula agregada', async () =
 
   expect(movie.title).toBe(result.title);
 
-<<<<<<< HEAD
 }) 
-=======
     expect(movies.length).toBe(0)
-});
+
 test('Se deberÌa iniciar la aplicaciÛn sin pelÌculas', async () => {
     const URL = `${baseURL}/movies`;
     const req = await fetch(URL)
@@ -102,4 +100,3 @@ test('Despues de crear una pelicula, exista esta en la BD', async () => {
     
 
 })
->>>>>>> featureTP2ej2

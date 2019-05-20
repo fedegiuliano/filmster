@@ -10,19 +10,17 @@ Aplicación utilizada en la cursada 2019 de Ingenieria de Software. UTN-FRLP
 ## Iniciar la app en modo producción
 
 `npm start`
-<<<<<<< HEAD
+
 
 <h1>
 	Somos el grupo numero 7
 </h1>
 <h1>
 	Giuliano de la Vega,Federico
-<<<<<<< HEAD
+ </h1>   
+  <h1> 
     Renaldi, Jeronimo
-=======
-<<<<<<< HEAD
+    </h1>
+ <h1>   
     Rodriguez, Maximiliano
-=======
->>>>>>> 1b1aafa86e141bb69710669397f5c74ac9adbe3d
->>>>>>> 50d2fc08605780ff2441e649ac8823233a4db39e
 </h1>
